@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from './Header'
 import APOD from './APOD'
 import Date from './Date'
+import Explanation from './Explanation'
 
 function App() {
   const [data, updateData] = useState({})
@@ -27,6 +28,7 @@ function App() {
       <Header title={data.title}/>
       <APOD picUrl={data.hdurl}/>
       <Date date={data.date}/>
+      <Explanation explanation={data.explanation}/>
     </div>
   );
 }
