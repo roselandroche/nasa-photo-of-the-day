@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import axios from 'axios'
 import Header from './Header'
 import APOD from './APOD'
 
 function App() {
+  const [data, updateData] = useState({})
+
+    useEffect(() => {
+        axios
+            .get('https://api.nasa.gov/planetary/apod?api_key=p4vCtPMLUYfzJMemA8BZimHfXv90RZeakiwtFoMf')
+
+            .then(result => {
+                updateData(`${result.data}`)
+            })
+            .catch(error => console.log(error))
+    }, []);
+
   return (
     <div className="App">
       <p>
@@ -11,7 +24,7 @@ function App() {
         app! Have fun!
       </p>
       <Header />
-      <APOD />
+      <APOD picUrl={data.hdurl} title={data.title}/>
     </div>
   );
 }

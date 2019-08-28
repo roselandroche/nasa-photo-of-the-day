@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Header() {
-    const [title] = useState('Astronomy Picture of the Day')
-
-    return <h1 className='header'>{title}</h1>
+function Header(props) {
+    return <h1 className='header'>{props.title}</h1>
 }
 
 export default Header
