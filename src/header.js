@@ -1,7 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledTitle = styled.h1`
+    font-family: Courier;
+    font-size: 48px;
+`; 
 
 function Header(props) {
-    return <h1 className='header'>{props.title}</h1>
+    return <StyledTitle className='header'>{props.title}</StyledTitle>
 }
 
 export default Header
