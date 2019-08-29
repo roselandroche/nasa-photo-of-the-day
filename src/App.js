@@ -3,7 +3,7 @@ import "./App.css";
 import axios from 'axios'
 import Header from './Header'
 import APOD from './APOD'
-// import ChangeDate from './ChangeDate'
+import ChangeDate from './ChangeDate'
 import Date from './Date'
 import Explanation from './Explanation'
 
@@ -28,7 +28,7 @@ function App() {
       </p> */}
       <Header title={data.title}/>
       <APOD picUrl={data.hdurl}/>
-      {/* <ChangeDate /> */}
+      <ChangeDate />
       <Date date={data.date}/>
       <Explanation explanation={data.explanation}/>
     </div>
